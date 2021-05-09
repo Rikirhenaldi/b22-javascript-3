@@ -1,7 +1,7 @@
 const hero = (name) =>{
     return new Promise((resolve,rejected)=>{
       setTimeout(() => {
-          let character = ["alucard", "audora","hayabusa", "akai","estes","atlas","argus","aldous","layla","esmeralda"]
+          let character = ["alucard", "eudora","hayabusa", "akai","estes","atlas","argus","aldous","layla","esmeralda"]
           let chosen = character.find((item)=>{
             return item === name          
           })
@@ -13,9 +13,9 @@ const hero = (name) =>{
       }, 2000);  
     })
 }
-async function showResult () {
+async function showResult (name) {
     try{
-        let proses1 = await hero("alucard")
+        let proses1 = await hero(name)
         console.log(`Hero Yang Anda Pilih Adalah ${proses1}`);
     }catch(e){
         console.log(e);
@@ -23,7 +23,7 @@ async function showResult () {
         console.log("Pemilihan Berhasil");
     }
 }
-showResult()
+showResult("alucard")
 
 let NominateLegendPlayer = (keyword) =>{
     return new Promise((resolve,reject) => {

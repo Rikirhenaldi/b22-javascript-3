@@ -18,12 +18,12 @@ function showMonth(error,data){
         }
     })
 }
-async function prosesor() {
+async function prosesor(cb) {
     try{
-        const proses1 = await getMonth(showMonth)
+        const proses1 = await getMonth(cb)
         return proses1
     }catch(e){
         console.log(e);
     }
 }
-prosesor()
+prosesor(showMonth)
